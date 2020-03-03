@@ -26,8 +26,8 @@ public class RNNativeScanEventLibraryModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void test() {
-    return "test hola"
+  public String testMethod() {
+    return "test hola";
     //return value
   }
 
@@ -49,7 +49,7 @@ public class RNNativeScanEventLibraryModule extends ReactContextBaseJavaModule {
       if (arg1.getAction().equals(m_Broadcastname)) {
         String str = arg1.getStringExtra("BARCODE");
         if (!"".equals(str)) {
-          RNNativeScanEventLibraryModule.sendEvent(str)
+          sendEvent(str);
         }
       }
     }
